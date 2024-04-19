@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    box-sizing: content-box;
+}
+
+:root {
+    --main-white: rgba(255, 255, 255, 0.821);
+    --gray-blue: rgba(94, 122, 166, 0.532);
+    --bright-blue: rgba(44, 191, 220, 0.603);
+    --header-pic: url("https://i.pinimg.com/564x/91/fa/68/91fa68dbf8dfea8598cff9e4195905a9.jpg");
+    --footer-pic: url("https://i.pinimg.com/564x/98/c1/5a/98c15a449a1166ec23f5c9f1f63995dd.jpg");
+    --names-pic: url("https://i.pinimg.com/564x/9d/89/a2/9d89a24d864f71aad6da5da9899aca49.jpg");
+}
+
+.my-page {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "main-content main-content main-content"
+        "footer footer footer";
+    font-family: 'Press Start 2P', monospace;
+    letter-spacing: 1.2px;
+    font-size: 10pt;
+    width: 100%;
+    grid-template-columns: 0.3fr 1fr 0.2fr;
+}
+
+header {
+    position: relative;
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    width: calc(100% - 40px);
+
+    background-image: var(--header-pic);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-y: -50px;
+    background-repeat: no-repeat;
+}
+
+header > h1 {
+    background-color: var(--gray-blue);
+    width: 100%;
+    text-align: center;
+    font-family: 'Press Start 2P', monospace;
+    letter-spacing: 4px;
+    font-size: 25pt;
+    color: white;
+    text-transform: uppercase;
+    padding: 5px;
+    text-shadow: 2px 2px 4px black;
+}
+
+#main {
+    grid-area: main-content;
+    display: flex;
+    justify-content: center;
+}
+
+#favourites {
+    background-color: rgba(216, 112, 147, 0.433);
+    background-size: 200%;
+}
+
+#left-column,
+#favourites {
+    display: flex;
+    align-items: center; 
+    flex-direction: column;
+    width: fit-content;
+    text-shadow: 1px 1px 1px black;
+    background-image: var(--names-pic);
+    background-position: top;
+    background-repeat: repeat-y;
+}
+
+#left-column {
+    width: 300px;
+    background-size: contain;
+}
+
+#left-table,
+#fav-table {
+    cursor: pointer;
+    margin: 20px;
+    background-color: var(--bright-blue);
+    color: white;
+    text-align: center;
+    width: 85%;
+    border-collapse: collapse;
+    line-height: 25px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.468);
+}
+
+#fav-table {
+    margin: 0;
+    width: 70%;
+}
+
+#fav-table tr{
+    padding: 5px;
+}
+
+#fav-table img {
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+}
+
+table:not(#fav-table) > tr:nth-child(even) {
+    background-color: var(--gray-blue);
+}
+
+#fav-pokemon {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    margin: 15px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    width: 20px;
+    height: 20px;
+    transition: color 0.3s ease;
+}
+
+#fav-pokemon:hover,
+.likedBtn {
+    color: rgba(221, 5, 5, 0.993);
+}
+
+#left-column > h3,
+#favourites > h3 {
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(27, 27, 65, 0.537);
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+#favourites > #fav-table {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
+#favourites > h3 {
+    width: calc(100% - 20px);
+}
+
+#left-column > h3 {
+    margin-bottom: 0;
+    width: calc(100% - 20px);
+}
+
+.clickedCell {
+    background-color: rgba(48, 58, 73, 0.712);
+    color: rgb(239, 137, 21);
+}
+
+#right-column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding-left: 20px;
+    background-color: rgba(44, 191, 220, 0.148);
+}
+
+#right-column > h3, h4, h5 {
+    padding: 30px 0;
+}
+
+#right-column > h3 {
+    padding-right: 48px;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', monospace;
+    letter-spacing: 2px;
+}
+
+#img-container {
+    text-align: center;
+}
+
+#right-column p {
+    font-size: 9pt;
+    letter-spacing: 1px;
+    line-height: 12pt;
+}
+
+footer {
+    grid-area: footer;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: var(--main-white, beige);
+    width: calc(100% - 40px);
+
+    background-image: var(--footer-pic);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    filter: saturate(1.5);
+}
+
+a:link,
+a:visited {
+    color: var(--main-white, beige);
+    list-style-type: none;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: 600;
+}
+
+a:hover {
+    color: white;
+}
+
+#on-offence > table,
+#on-defence {
+    border: 2px solid var(--bright-blue);
+    line-height: 25px;
+    background-color: white;
+    border-collapse: collapse;
+}
+
+#on-offence td:nth-child(odd),
+#on-defence td:nth-child(odd) {
+    font-weight: bold;
+}
+
+#on-offence td,
+#on-defence td {
+    padding-left: 10px;
+}
+
+#on-offence {
+    display: flex;
+    width: calc(100% - 20px);
+    gap: 10px;
+}
+
+#on-offence > table {
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#on-defence {
+    width: calc(100% - 20px);
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    #main {
+      display: grid;
+      grid-template-areas:
+      "header"
+      "favourites"
+      "right-column"
+      "left-column"
+      "footer";
+      grid-template-columns: 100%;
+    }
+
+    #left-column {
+        grid-area: left-column;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    #right-column {
+        grid-area: right-column;
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 5px);
+        padding-left: 5px;
+    }
+
+    #on-offence {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #on-offence > table {
+        width: calc(100% - 5px);
+    }
+
+    #on-defence {
+        width: calc(100% - 5px);
+        margin-bottom: 20px;
+    }
+
+    #favourites {
+        grid-area: favourites;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #favourites > #fav-table {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CS719 Assignment One</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src="./script.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    </head>
+
+    <body class="my-page">
+        <header>
+            <h1>Pokemon Data Viewer</h1>
+        </header>
+
+        <section id="main">
+            <div id="left-column">
+                <h3>All Pokemon</h3>
+                    <table id="left-table"><!--here's where my Pokemon list goes--></table>
+
+            </div>
+            <div id="right-column">
+                <h3>Pokemon details for:
+                    <span class="pokemon-name">Ana</span>
+                </h3>
+                <button id="fav-pokemon" title="I like this one!">
+                    <i class="fa-solid fa-circle-half-stroke fa-rotate-90 fa-xl"><!--It kind of looks like a pokeball--></i>
+                </button>
+                    <div id="img-container">
+                        <img id="pokemon-img" src="">
+                    </div>
+                <h4>Pokedex number: #<span id="pokedex-num">0</span></h4>
+                <h4>Description:</h4>
+                    <p id="description-text">If you see this text on the webpage, then something's wrong.</p>
+                <h4>Type info:</h4>
+                    <p>
+                        <span class="pokemon-name">Ana</span>'s type(s): 
+                        <span id="type-info">If you see this text on the webpage, then something's wrong.</span>
+                    </p>
+                <h5>On offence: </h5>
+                    <table id="on-offence"><!--"On offence" table goes here--></table>
+                <h5>On defence: </h5>
+                    <table id="on-defence"><!--"On defence" table goes here--></table>
+            </div>
+            <div id="favourites">
+                <h3>Liked</h3>
+                <table id="fav-table"><!--here's where my liked Pokemons will go--></table>
+            </div>
+        </section>
+
+        <footer>
+            <p>Pokemon data viewer created by Anastasiia Nozdria</p><br>
+            <a href="https://www.pokemon.com/us">Official Pokemon website</a>
+        </footer>
+    </body>
+
+</html>
