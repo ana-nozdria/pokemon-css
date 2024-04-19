@@ -1,3 +1,6 @@
+**THE PROJECT WAS CREATED DURING MY STUDIES AT THE UNIVERSITY OF AUCKLAND**
+
+
 **Introduction**
 
 In this project, I created the client-side code for a page that displays data about Pokemon. The page uses AJAX so that it can dynamically load new data into an already loaded page.
